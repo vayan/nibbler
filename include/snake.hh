@@ -5,11 +5,20 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:47:38 2012 yann vaillant
-// Last update Mon Mar 12 18:10:55 2012 yann vaillant
+// Last update Mon Mar 12 19:38:50 2012 yann vaillant
 //
 
 #ifndef _SNAKE_
 #define _SNAKE_
+
+#include <list>
+
+typedef enum Direction {
+  Up,
+  Down,
+  Left,
+  Right
+};
 
 class Snake
 {
@@ -29,6 +38,7 @@ private:
   int	pos_y;
   int	lenght;
   int	speed;
+  Direction dir;
 };
 
 #endif

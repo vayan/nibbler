@@ -5,17 +5,18 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:47:32 2012 yann vaillant
-// Last update Mon Mar 12 18:17:51 2012 yann vaillant
+// Last update Mon Mar 12 19:39:17 2012 yann vaillant
 //
 
 #include "snake.hh"
 
 Snake::Snake()
 {
-  pos_x = 7;
-  pos_y = 15;
+  pos_x = 5;
+  pos_y = 5;
   lenght = 3;
   speed = 1;
+  dir = Up;
 }
 
 int   Snake::get_x()

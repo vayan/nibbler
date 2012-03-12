@@ -5,7 +5,7 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Mon Mar 12 16:21:44 2012 yann vaillant
+## Last update Mon Mar 12 19:29:59 2012 yann vaillant
 ##
 
 ##COMMON##
@@ -14,7 +14,7 @@ NAME= nibler
 INCLUDE= -Iinclude
 SRC= $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
 OBJ= $(SRC:.c=.o)
-CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU
+CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -Wswitch
 
 all : $(NAME)
 

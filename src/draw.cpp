@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 //
 // Started on  Mon Mar 12 12:38:43 2012 yann vaillant
-// Last update Mon Mar 12 18:17:09 2012 yann vaillant
+// Last update Mon Mar 12 19:36:41 2012 yann vaillant
 //
 
 #include <iostream>
@@ -181,7 +181,7 @@ void	Draw::init_lib()
 void	Draw::draw_snake(Snake *snake)
 {
   // glPushMatrix();
-  glTranslatef(snake->get_x(), snake->get_y(), 0);
+  glTranslatef(-(snake->get_x()), snake->get_y(), 0);
   Draw::add_cube(this->wall);
   //glPopMatrix();
 }
@@ -201,7 +201,7 @@ void	Draw::draw_map()
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) ;
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
-  gluLookAt(0,20,16, 0,0,0, 0,0,1);
+  gluLookAt(0,20,18, 0,0,0, 0,0,1);
   glBegin(GL_QUADS);
   while (i < this->map->get_x())
     {
@@ -224,15 +224,32 @@ void	Draw::draw_map()
     }
 }
 
-bool	Draw::check_exit()
+bool	Draw::handle_mvt(Snake* snake) 
 {
   SDL_Event event;
   
-  SDL_WaitEvent(&event);
+  SDL_PollEvent(&event);
   switch(event.type)
     {
     case SDL_QUIT:
       return (true);
+    }
+  switch(event.key.keysym.sym)
+    {
+    case SDLK_LEFT:
+      snake->move_right();
+      break;
+    case SDLK_RIGHT:
+      snake->move_left();
+      break;
+    case SDLK_UP:
+      snake->move_down();
+      break;
+    case SDLK_DOWN:
+      snake->move_up();
+      break;
+    default:
+      break;
     }
   return (false);
 }
