@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:17:02 2012 yann vaillant
-// Last update Tue Mar 13 10:37:19 2012 yann vaillant
+// Last update Tue Mar 13 10:45:02 2012 yann vaillant
 //
 
 #include <unistd.h>
@@ -54,10 +54,11 @@ bool	Core::check_colli()
       (this->snake->get_x() >= this->map->get_x()))
     quit = true;
   if ((this->snake->get_y() <= 0) ||
-      (this->snake->get_y() >= this->map->get_y()))
+      (this->snake->get_y() >= this->map->get_y() - 1))
     quit = true;
-  if (this->snake->get_y() == 1 && this->snake->get_x() == 1)
-    quit = false;
+  if (this->snake->get_x() <= 1)
+    quit = true;
+    
   return (quit);
 }
 
