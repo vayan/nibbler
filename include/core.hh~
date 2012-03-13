@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:17:12 2012 yann vaillant
-// Last update Mon Mar 12 17:54:10 2012 yann vaillant
+// Last update Tue Mar 13 09:01:59 2012 yann vaillant
 //
 
 #ifndef CORE_H
@@ -21,6 +21,7 @@ public:
   Core(Map*, Draw*, Snake*);
   ~Core();
   void          launch_game();
+  void		move_dir();
 private:
   Map *map;
   Draw *draw;

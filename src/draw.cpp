@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 //
 // Started on  Mon Mar 12 12:38:43 2012 yann vaillant
-// Last update Mon Mar 12 19:36:41 2012 yann vaillant
+// Last update Tue Mar 13 10:36:24 2012 yann vaillant
 //
 
 #include <iostream>
@@ -224,33 +224,38 @@ void	Draw::draw_map()
     }
 }
 
-bool	Draw::handle_mvt(Snake* snake) 
+int	Draw::handle_mvt(Snake* snake) 
 {
   SDL_Event event;
+  int	ret = 0;
   
   SDL_PollEvent(&event);
   switch(event.type)
     {
     case SDL_QUIT:
-      return (true);
+      return (-1);
     }
   switch(event.key.keysym.sym)
     {
     case SDLK_LEFT:
       snake->move_right();
+      ret = 1;
       break;
     case SDLK_RIGHT:
       snake->move_left();
+      ret = 1;
       break;
     case SDLK_UP:
       snake->move_down();
+      ret = 1;
       break;
     case SDLK_DOWN:
       snake->move_up();
+      ret = 1;
       break;
     default:
       break;
     }
-  return (false);
+  return (ret);
 }
 

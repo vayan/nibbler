@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 //
 // Started on  Mon Mar 12 12:33:30 2012 yann vaillant
-// Last update Mon Mar 12 19:24:59 2012 yann vaillant
+// Last update Tue Mar 13 10:32:20 2012 yann vaillant
 //
 
 #ifndef _DRAW_
@@ -28,7 +28,7 @@ public:
   void		draw_map();
   void		draw_snake(Snake*);
   void		add_cube(GLuint text);
-  bool		handle_mvt(Snake*);
+  int		handle_mvt(Snake*);
   GLuint	loadTexture(const char *, bool);
   SDL_Surface*	flipSurface(SDL_Surface *);
   void		refresh();
