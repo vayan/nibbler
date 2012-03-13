@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:47:38 2012 yann vaillant
-// Last update Mon Mar 12 19:38:50 2012 yann vaillant
+// Last update Tue Mar 13 09:40:53 2012 yann vaillant
 //
 
 #ifndef _SNAKE_
@@ -18,7 +18,7 @@ typedef enum Direction {
   Down,
   Left,
   Right
-};
+} Direction;
 
 class Snake
 {
@@ -31,6 +31,7 @@ public:
   void	move_right();
   int	get_x();
   int	get_y();
+  Direction get_dir();
   int	get_lenght();
   int	get_speed();
 private:

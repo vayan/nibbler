@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:47:32 2012 yann vaillant
-// Last update Mon Mar 12 19:39:17 2012 yann vaillant
+// Last update Tue Mar 13 09:40:32 2012 yann vaillant
 //
 
 #include "snake.hh"
@@ -16,7 +16,12 @@ Snake::Snake()
   pos_y = 5;
   lenght = 3;
   speed = 1;
-  dir = Up;
+  dir = Down;
+}
+
+Direction Snake::get_dir()
+{
+  return (this->dir);
 }
 
 int   Snake::get_x()
@@ -41,21 +46,25 @@ int   Snake::get_speed()
 
 void  Snake::move_up()
 {
+  this->dir = Up;
   this->pos_y += 1;
 }
 
 void  Snake::move_down()
 {
+  this->dir = Down;
   this->pos_y -= 1;
 }
 
 void  Snake::move_left()
 {
+  this->dir = Left;
   this->pos_x += 1;
 }
 
 void  Snake::move_right()
 {
+  this->dir = Right;
   this->pos_x -= 1;
 }
 
