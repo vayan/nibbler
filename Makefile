@@ -5,7 +5,7 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Tue Mar 13 15:04:25 2012 yann vaillant
+## Last update Wed Mar 14 16:59:51 2012 yann vaillant
 ##
 
 
@@ -33,7 +33,7 @@ CC = g++
 NAME= nibler
 SRC= $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
 OBJ= $(SRC:.c=.o)
-CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU
+CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -ldl
 
 all: $(NAME_LIB_OPGL) $(NAME)
 
