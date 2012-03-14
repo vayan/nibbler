@@ -60,7 +60,7 @@ bool	Core::food_is_good()
       (this->food->get_x() >= this->map->get_x()))
     return (false);
   if ((this->food->get_y() <= 0) ||
-      (this->food->get_y() >= this->map->get_y() - 1))
+      (this->food->get_y() >= this->map->get_y()))
     return (false);
   if (this->food->get_x() <= 1)
     return (false);
