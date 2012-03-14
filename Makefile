@@ -5,7 +5,7 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Wed Mar 14 16:59:51 2012 yann vaillant
+## Last update Wed Mar 14 17:03:57 2012 ludovic tanter
 ##
 
 
@@ -17,7 +17,7 @@ SRC_LIB_COMMON= src/food.cpp \
 OBJ_LIB_COMMON=$(SRC_LIB_COMMON:.cpp=.o)
 
 ##LIB OPENGL##
-NAME_LIB_OPGL=libopengl.so
+NAME_LIB_OPGL=lib_nibbler_opengl.so
 SRC_LIB_OPGL=opengl/draw.cpp
 OBJ_LIB_OPGL=$(SRC_LIB_OPGL:.cpp=.o)
 
@@ -28,14 +28,26 @@ CXX = g++
 $(NAME_LIB_OPGL): $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
 	$(CXX) -shared -o $(NAME_LIB_OPGL) $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
 
+##LIB NCURSES##
+NAME_LIB_NCURSES=lib_nibbler_ncurses.so
+SRC_LIB_NCURSES=ncurses/draw.cpp
+OBJ_LIB_NCURSES=$(SRC_LIB_NCURSES:.cpp=.o)
+
+LDFLAGS += -ldl -lncurses
+CXXFLAGS += -fPIC -Iinclude
+CXX = g++
+
+$(NAME_LIB_NCURSES): $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
+	$(CXX) -shared -o $(NAME_LIB_NCURSES) $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
+
 ##GENERAL##
 CC = g++
 NAME= nibler
 SRC= $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
 OBJ= $(SRC:.c=.o)
-CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -ldl
+CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -ldl -fPIC
 
-all: $(NAME_LIB_OPGL) $(NAME)
+all: $(NAME_LIB_OPGL) $(NAME_LIB_NCURSES) $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(INCLUDE) 
@@ -52,4 +64,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 	rm -rf $(NAME_LIB_OPGL)
+	rm -rf $(NAME_LIB_NCURSES)
+
 re: fclean all
