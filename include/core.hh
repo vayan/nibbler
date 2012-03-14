@@ -13,7 +13,6 @@
 
 #include <list>
 #include "map.hh"
-//#include "draw.hh"
 #include "snake.hh"
 #include "food.hh"
 #include "ILib.hh"

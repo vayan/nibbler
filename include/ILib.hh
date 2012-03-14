@@ -15,15 +15,21 @@
 #include "food.hh"
 #include "map.hh"
 
+typedef struct rgb {
+  int r;
+  int g;
+  int b;
+} rgb;
+
 class ILib
 {
 
 public:	
-  virtual void		init_lib() = 0;
+  virtual void		init_lib(Map*) = 0;
   virtual void		draw_map(Map*) = 0;
   virtual void		draw_snake(Snake*) = 0;
   virtual void      draw_food(Food*) = 0;
-  virtual void		add_cube() = 0;
+  virtual void		add_cube(rgb) = 0;
   virtual int     	handle_mvt(Snake*) = 0;
   virtual void    	refresh() = 0;
 };

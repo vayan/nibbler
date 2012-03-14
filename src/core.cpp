@@ -36,20 +36,15 @@ int	Core::move_dir()
   
   ret = this->draw->handle_mvt(this->snake); 
   if (ret == -1)
-    quit = -1;
-  if (ret == 1)
-    quit = 1;
-  if (ret == 0)
-    { 
-      if ((this->snake->get_dir()) == Up)
-	this->snake->move_up();
-      else if ((this->snake->get_dir()) == Down)
-	this->snake->move_down();
-      else if ((this->snake->get_dir()) == Left)
-	this->snake->move_left();
-      else if ((this->snake->get_dir()) == Right)
-	this->snake->move_right();
-    }
+    return (-1);
+  if ((this->snake->get_dir()) == Up)
+	 this->snake->move_up();
+  else if ((this->snake->get_dir()) == Down)
+	 this->snake->move_down();
+  else if ((this->snake->get_dir()) == Left)
+	 this->snake->move_left();
+  else if ((this->snake->get_dir()) == Right)
+	 this->snake->move_right();
   if ((this->check_colli()) == -1)
     return (-1);
   this->check_colli_food();
@@ -116,7 +111,7 @@ void Core::launch_game()
 {
   int	quit = 0;
   
-  this->draw->init_lib();
+  this->draw->init_lib(this->map);
   while (quit >= 0)
     {
       quit = this->move_dir();
@@ -126,7 +121,7 @@ void Core::launch_game()
       this->draw->draw_snake(this->snake);
       this->draw->draw_food(this->food);
       this->draw->refresh();
-      usleep(200000);
+      usleep(400000 - (100000 * this->snake->get_speed()));
     }
 }
 

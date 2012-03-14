@@ -14,10 +14,10 @@
 #include <list>
 
 typedef enum Direction {
-  Up,
-  Down,
-  Left,
-  Right
+  Up = 1,
+  Down = -1,
+  Left = 2,
+  Right = -2
 } Direction;
 
 class Snake
@@ -32,6 +32,7 @@ public:
   int	            get_x();
   int	            get_y();
   Direction       get_dir();
+  void            set_dir(Direction);
   int	            get_lenght();
   void            set_lenght(int val);
   int	            get_speed();

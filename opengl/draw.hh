@@ -26,11 +26,11 @@ class Draw : public ILib
 public:
 		      Draw();
 		      ~Draw();
-  void		init_lib();
+  void		init_lib(Map*);
   void		draw_map(Map*);
   void		draw_snake(Snake*);
   void    draw_food(Food*);
-  void		add_cube();
+  void		add_cube(rgb);
   int     handle_mvt(Snake*);
   void    refresh();
 private:

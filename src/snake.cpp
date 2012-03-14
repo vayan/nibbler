@@ -20,7 +20,7 @@ Snake::Snake()
   int	i = 0;
   int	j = 0;
  
-  speed = 1;
+  speed = 2;
   dir = Down;
   lenght = 3;
 
@@ -61,6 +61,12 @@ void    Snake::add_lenght(int x, int y)
 Direction Snake::get_dir()
 {
   return (this->dir);
+}
+
+void    Snake::set_dir(Direction dir)
+{
+  if ((this->dir * -1) != dir)
+    this->dir = dir;
 }
 
 int   Snake::get_x()
