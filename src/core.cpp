@@ -60,7 +60,7 @@ bool	Core::food_is_good()
       (this->food->get_x() >= this->map->get_x()))
     return (false);
   if ((this->food->get_y() <= 0) ||
-      (this->food->get_y() >= this->map->get_y() - 1))
+      (this->food->get_y() >= this->map->get_y()))
     return (false);
   if (this->food->get_x() <= 1)
     return (false);
@@ -79,7 +79,7 @@ int	Core::check_colli()
       (this->snake->get_x() >= this->map->get_x()))
     return (-1);
   if ((this->snake->get_y() <= 0) ||
-      (this->snake->get_y() >= this->map->get_y() - 1))
+      (this->snake->get_y() >= this->map->get_y()))
     return (-1);
   if (this->snake->get_x() <= 1)
     return (-1);
