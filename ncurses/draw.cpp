@@ -5,7 +5,7 @@
 // Login   <tanter_l@epitech.net>
 // 
 // Started on  Wed Mar 14 11:48:26 2012 ludovic tanter
-// Last update Wed Mar 14 17:02:15 2012 ludovic tanter
+// Last update Wed Mar 14 17:36:30 2012 ludovic tanter
 //
 
 #include	<curses.h>
@@ -34,13 +34,13 @@ int		Draw::handle_mvt(Snake *snake)
   else
     {
       if (key == KEY_RIGHT)
-	snake->set_dir(Right);
-      else if (key == KEY_LEFT)
-	snake->set_dir(Left);
-      else if (key == KEY_UP)
 	snake->set_dir(Up);
-      else if (key == KEY_DOWN)
+      else if (key == KEY_LEFT)
 	snake->set_dir(Down);
+      else if (key == KEY_UP)
+	snake->set_dir(Right);
+      else if (key == KEY_DOWN)
+	snake->set_dir(Left);
     }
   return (0);
 }
@@ -78,21 +78,21 @@ void		Draw::draw_snake(Snake *snake)
 {
   std::list<int*> pos = snake->get_pos();
 
-  attron(COLOR_PAIR(5));
+  attron(COLOR_PAIR(6));
   for (std::list<int*>::iterator it = pos.begin(); it != pos.end(); ++it)
     {
       move((*it)[0], (*it)[1]);
       printw(" ");
     }    
-  attroff(COLOR_PAIR(5));
+  attroff(COLOR_PAIR(6));
 }
 
 void		Draw::draw_food(Food *food)
 {
   move(food->get_x(), food->get_y());
-  attron(COLOR_PAIR(6));
+  attron(COLOR_PAIR(5));
   printw(" ");
-  attroff(COLOR_PAIR(6));
+  attroff(COLOR_PAIR(5));
 }
 
 void		Draw::init_lib(Map *map)

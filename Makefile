@@ -5,7 +5,7 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Wed Mar 14 17:03:57 2012 ludovic tanter
+## Last update Wed Mar 14 17:39:07 2012 ludovic tanter
 ##
 
 
@@ -42,10 +42,10 @@ $(NAME_LIB_NCURSES): $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
 
 ##GENERAL##
 CC = g++
-NAME= nibler
+NAME= nibbler
 SRC= $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
 OBJ= $(SRC:.c=.o)
-CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -ldl -fPIC
+CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -ldl -fPIC -lncurses
 
 all: $(NAME_LIB_OPGL) $(NAME_LIB_NCURSES) $(NAME)
 
