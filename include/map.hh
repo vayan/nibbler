@@ -16,18 +16,18 @@
 class Map 
 {
 public :
-  Map();
-  Map(int x, int y);
-  ~Map();
-  void	init_map();
-  void	aff_map();
-  std::vector< std::vector<char> >  get_map();
-  int	get_x();
-  int	get_y();
+                                    Map();
+                                    Map(int x, int y);
+                                    ~Map();
+  void	                            init_map();
+  void	                            aff_map();
+  std::vector< std::vector<char> >   get_map();
+  int	                              get_x();
+  int	                              get_y();
 private:
-  int	x;
-  int	y;
-  std::vector< std::vector<char> > map;
+  int	                              x;
+  int	                              y;
+  std::vector< std::vector<char> >   map;
 };
 
 #endif

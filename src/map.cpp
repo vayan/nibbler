@@ -42,13 +42,13 @@ void	Map::init_map()
     {
       j = 0;
       while (j < this->y)
-	{
-	  if (i == 0 || j == 0 || i == (this->x - 1) || j == (this->y - 1))
-	    this->map[i][j] = 'X';
-	  else
-	    this->map[i][j] = '.';
-	  j++;
-	}
+      	{
+      	  if (i == 0 || j == 0 || i == (this->x - 1) || j == (this->y - 1))
+      	    this->map[i][j] = 'X';
+      	  else
+      	    this->map[i][j] = '.';
+      	  j++;
+      	}
       i++;
     }
 }
@@ -62,10 +62,10 @@ void	Map::aff_map()
     {
       j = 0;
       while (j < this->y)
-	{
-	  std::cout << this->map[i][j];
-	  j++;
-	}
+      	{
+      	  std::cout << this->map[i][j];
+      	  j++;
+      	}
       std::cout << std::endl;
       i++;
     }

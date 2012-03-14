@@ -5,29 +5,51 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Mon Mar 12 19:29:59 2012 yann vaillant
+## Last update Tue Mar 13 15:04:25 2012 yann vaillant
 ##
 
-##COMMON##
+
+##GLOBAL##
+INCLUDE=-Iinclude
+SRC_LIB_COMMON= src/food.cpp \
+				src/map.cpp \
+				src/snake.cpp
+OBJ_LIB_COMMON=$(SRC_LIB_COMMON:.cpp=.o)
+
+##LIB OPENGL##
+NAME_LIB_OPGL=libopengl.so
+SRC_LIB_OPGL=opengl/draw.cpp
+OBJ_LIB_OPGL=$(SRC_LIB_OPGL:.cpp=.o)
+
+LDFLAGS += -ldl
+CXXFLAGS += -fPIC -Iinclude
+CXX = g++
+
+$(NAME_LIB_OPGL): $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
+	$(CXX) -shared -o $(NAME_LIB_OPGL) $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
+
+##GENERAL##
 CC = g++
 NAME= nibler
-INCLUDE= -Iinclude
 SRC= $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
 OBJ= $(SRC:.c=.o)
-CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -Wswitch
+CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU
 
-all : $(NAME)
+all: $(NAME_LIB_OPGL) $(NAME)
 
-$(NAME) : $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(INCLUDE) 
 
 clean:
-	rm -f *~
-	rm -f *#
-	rm -f src/*~
-	rm -f src/*# 
+	#rm -f *~
+	#rm -f *#
+	#rm -f src/*~
+	#rm -f src/*# 
+	#rm -f $(OBJ_LIB_OPGL)
+	#rm -f $(OBJ_LIB_COMMON)
+	#rm -f OBJ
 
 fclean: clean
 	rm -rf $(NAME)
-
-re: fclean $(NAME)
+	rm -rf $(NAME_LIB_OPGL)
+re: fclean all
