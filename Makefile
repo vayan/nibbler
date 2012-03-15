@@ -5,7 +5,7 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Wed Mar 14 17:03:57 2012 ludovic tanter
+## Last update Wed Mar 14 18:24:11 2012 ludovic tanter
 ##
 
 
@@ -25,8 +25,6 @@ LDFLAGS += -ldl
 CXXFLAGS += -fPIC -Iinclude
 CXX = g++
 
-$(NAME_LIB_OPGL): $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
-	$(CXX) -shared -o $(NAME_LIB_OPGL) $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
 
 ##LIB NCURSES##
 NAME_LIB_NCURSES=lib_nibbler_ncurses.so
@@ -37,20 +35,24 @@ LDFLAGS += -ldl -lncurses
 CXXFLAGS += -fPIC -Iinclude
 CXX = g++
 
-$(NAME_LIB_NCURSES): $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
-	$(CXX) -shared -o $(NAME_LIB_NCURSES) $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
 
 ##GENERAL##
 CC = g++
-NAME= nibler
+NAME= nibbler
 SRC= $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
 OBJ= $(SRC:.c=.o)
-CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -ldl -fPIC
+CFLAGS= -W -Wall -Wextra -g -lSDL -lSDL_image -lGL -lGLU -ldl -fPIC -lncurses
 
 all: $(NAME_LIB_OPGL) $(NAME_LIB_NCURSES) $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(INCLUDE) 
+
+$(NAME_LIB_OPGL): $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
+	$(CXX) -shared -o $(NAME_LIB_OPGL) $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
+
+$(NAME_LIB_NCURSES): $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
+	$(CXX) -shared -o $(NAME_LIB_NCURSES) $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
 
 clean:
 	#rm -f *~
