@@ -5,7 +5,7 @@
 // Login   <tanter_l@epitech.net>
 // 
 // Started on  Wed Mar 14 11:48:26 2012 ludovic tanter
-// Last update Thu Mar 15 16:20:52 2012 ludovic tanter
+// Last update Thu Mar 15 17:09:28 2012 ludovic tanter
 //
 
 #include	<curses.h>
@@ -24,7 +24,7 @@ Draw::Draw()
 {
 }
 
-Draw::~Draw()
+__attribute__((destructor)) Draw::~Draw()
 {
   curs_set(1);  
   clear();

@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 //
 // Started on  Mon Mar 12 12:33:30 2012 yann vaillant
-// Last update Tue Mar 13 14:08:05 2012 yann vaillant
+// Last update Thu Mar 15 16:56:16 2012 ludovic tanter
 //
 
 #ifndef _LIB_H
@@ -32,6 +32,7 @@ public:
   virtual int     handle_mvt(Snake*) = 0;
   virtual void    refresh() = 0;
   virtual int     get_v() = 0;
+  virtual ~ILib() = 0;
 };
 
 #endif

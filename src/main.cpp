@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 11:42:49 2012 yann vaillant
-// Last update Tue Mar 13 16:47:10 2012 yann vaillant
+// Last update Thu Mar 15 17:12:24 2012 ludovic tanter
 //
 
 #include <iostream>
@@ -45,6 +45,7 @@ int	main(int ac, char **av)
   	Core	core(map, graph, new_snake);
   	//map.aff_map(); //test
   	core.launch_game();
+	dlclose(dlhandle);
   	return (0);
 }
 
