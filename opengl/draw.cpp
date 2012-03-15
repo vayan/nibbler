@@ -32,6 +32,11 @@ Draw::~Draw()
 
 }
 
+int   Draw::get_v()
+{
+  return (this->v);
+}
+
 void	Draw::add_cube(rgb color)
 {
   glPushMatrix();
@@ -89,6 +94,7 @@ void	Draw::init_lib(Map* map)
   int width;
   int height;
  
+  this->v = 1;
   width = map->get_x() + 800;
   height = map->get_y() + 600;
   SDL_Init(SDL_INIT_VIDEO);
@@ -176,7 +182,7 @@ void	Draw::draw_map(Map *map)
     	  glTranslatef(0.0f, 1.0f, 0.0f);	    
     	  j++;
     	 }
-      glTranslatef(1.0f, -j, 0.0f);
+      glTranslatef(1.0f, -map->get_y(), 0.0f);
       i++;
     }
 }
@@ -204,6 +210,9 @@ int	Draw::handle_mvt(Snake* snake)
       	  break;
       	case SDLK_DOWN:
             snake->set_dir(Up);
+          break;
+        case SDLK_ESCAPE:
+          return (-1);
       	  break;
       	default:
       	  break;

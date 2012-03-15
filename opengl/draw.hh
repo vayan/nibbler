@@ -33,7 +33,9 @@ public:
   void		add_cube(rgb);
   int     handle_mvt(Snake*);
   void    refresh();
+  int     get_v();
 private:
+  int      v;
   Map		   *map;
   GLuint	 wall;
 };

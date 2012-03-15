@@ -55,7 +55,7 @@ void		Draw::draw_map(Map *map)
       x = 0;
       while (x < map->get_x())
 	{
-	  move(x, y);
+	  move(y, x);
 	  if (map->get_map()[x][y] == 'X')
 	    {
 	      attron(COLOR_PAIR(1));
@@ -99,6 +99,7 @@ void		Draw::init_lib(Map *map)
 {
   initscr();
   start_color();
+  this->v = 2;
   init_pair(1, COLOR_WHITE, COLOR_WHITE);
   init_pair(2, COLOR_BLACK, COLOR_BLACK);
   init_pair(3, COLOR_RED, COLOR_RED);
@@ -109,6 +110,11 @@ void		Draw::init_lib(Map *map)
   noecho();
   nodelay(stdscr, TRUE);
   keypad(stdscr, TRUE);
+}
+
+int   Draw::get_v()
+{
+  return (this->v);
 }
 
 void		Draw::refresh()

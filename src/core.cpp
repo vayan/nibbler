@@ -62,8 +62,6 @@ bool	Core::food_is_good()
   if ((this->food->get_y() <= 0) ||
       (this->food->get_y() >= this->map->get_y() - 1))
     return (false);
-  if (this->food->get_x() <= 1)
-    return (false);
   for (it++; it != pos.end(); ++it)
     if ((this->food->get_x() == (*it)[0]) && (this->food->get_y() == (*it)[1]))
       return (false);
@@ -74,14 +72,24 @@ int	Core::check_colli()
 {
   std::list<int*> pos = this->snake->get_pos();
   std::list<int*>::iterator it = pos.begin();
-  
+  if (this->draw->get_v() == 2)
+  {
+   if ((this->snake->get_y() <= 0) ||
+        (this->snake->get_y() >= this->map->get_y() - 1))
+          return (-1); 
+   if (this->snake->get_x() >= this->map->get_x() - 1)
+     return (-1);
+  }
+  else
+  {
+    if ((this->snake->get_y() <= 0) ||
+          (this->snake->get_y() >= this->map->get_y() - 1))
+            return (-1); 
+    if (this->snake->get_x() <= 1)
+       return (-1);
+  }
   if ((this->snake->get_x() <= 0) || 
       (this->snake->get_x() >= this->map->get_x()))
-    return (-1);
-  if ((this->snake->get_y() <= 0) ||
-      (this->snake->get_y() >= this->map->get_y() - 1))
-    return (-1);
-  if (this->snake->get_x() <= 1)
     return (-1);
   for (it++; it != pos.end(); ++it)
     if ((this->snake->get_x() == (*it)[0]) && (this->snake->get_y() == (*it)[1]))

@@ -32,6 +32,7 @@ public:
   virtual void		add_cube(rgb) = 0;
   virtual int     	handle_mvt(Snake*) = 0;
   virtual void    	refresh() = 0;
+  virtual int       get_v() = 0;
 };
 
 #endif
