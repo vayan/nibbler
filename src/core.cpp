@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:17:02 2012 yann vaillant
-// Last update Wed Mar 14 17:02:11 2012 yann vaillant
+// Last update Thu Mar 15 18:25:19 2012 ludovic tanter
 //
 
 #include <sstream>
@@ -160,6 +160,7 @@ int Core::check_colli_food() const
 int Core::launch_game() const
 {
   int	quit = 0;
+  int	speed;
   
   this->draw->init_lib(this->map);
   while (quit >= 0)
@@ -171,7 +172,10 @@ int Core::launch_game() const
       this->draw->draw_snake(this->snake);
       this->draw->draw_food(this->food);
       this->draw->refresh();
-      usleep(400000 - (10000 * this->snake->get_speed()));
+      speed = 400000 - (10000 * this->snake->get_speed());
+      if (speed <= 0)
+	speed = 10000;
+      usleep(speed);
     }
   return (0);
 }
