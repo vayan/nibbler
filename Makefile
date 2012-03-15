@@ -5,7 +5,7 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Thu Mar 15 13:12:51 2012 yann vaillant
+## Last update Thu Mar 15 15:30:59 2012 ludovic tanter
 ##
 
 
@@ -23,10 +23,7 @@ OBJ_LIB_OPGL=$(SRC_LIB_OPGL:.cpp=.o)
 
 LDFLAGS += -ldl
 CXXFLAGS += -fPIC -Iinclude
-CXX = g++
 
-$(NAME_LIB_OPGL): $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
-	$(CXX) -shared -o $(NAME_LIB_OPGL) $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
 
 ##LIB NCURSES##
 NAME_LIB_NCURSES=lib_nibbler_ncurses.so
@@ -35,10 +32,7 @@ OBJ_LIB_NCURSES=$(SRC_LIB_NCURSES:.cpp=.o)
 
 LDFLAGS += -ldl -lncurses
 CXXFLAGS += -fPIC -Iinclude
-CXX = g++
 
-$(NAME_LIB_NCURSES): $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
-	$(CXX) -shared -o $(NAME_LIB_NCURSES) $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
 
 ##GENERAL##
 CC = g++
@@ -51,6 +45,12 @@ all: $(NAME_LIB_OPGL) $(NAME_LIB_NCURSES) $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(INCLUDE) 
+
+$(NAME_LIB_OPGL): $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
+	$(CC) -shared -o $(NAME_LIB_OPGL) $(OBJ_LIB_OPGL) $(OBJ_LIB_COMMON)
+
+$(NAME_LIB_NCURSES): $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
+	$(CC) -shared -o $(NAME_LIB_NCURSES) $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
 
 clean:
 	#rm -f *~
