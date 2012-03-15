@@ -5,7 +5,7 @@
 // Login   <tanter_l@epitech.net>
 // 
 // Started on  Wed Mar 14 11:48:26 2012 ludovic tanter
-// Last update Thu Mar 15 17:09:28 2012 ludovic tanter
+// Last update Thu Mar 15 17:40:28 2012 ludovic tanter
 //
 
 #include	<curses.h>
@@ -24,12 +24,8 @@ Draw::Draw()
 {
 }
 
-__attribute__((destructor)) Draw::~Draw()
+Draw::~Draw()
 {
-  curs_set(1);  
-  clear();
-  refresh();
-  endwin();
 }
 
 int		Draw::handle_mvt(Snake *snake)
@@ -132,6 +128,14 @@ void		Draw::init_lib(Map *map)
 int		Draw::get_v()
 {
   return (this->v);
+}
+
+__attribute__((destructor)) void end()
+{
+  curs_set(1);  
+  clear();
+  refresh();
+  endwin();  
 }
 
 void		Draw::refresh()
