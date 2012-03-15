@@ -24,14 +24,14 @@ typedef struct rgb {
 class ILib
 {
 public:	
-  virtual void		init_lib(Map*) const = 0;
-  virtual void		draw_map(Map*) const = 0;
-  virtual void		draw_snake(Snake*) const = 0;
-  virtual void    draw_food(Food*) const = 0;
-  virtual void		add_cube(rgb) const = 0;
-  virtual int     handle_mvt(Snake*) const = 0;
-  virtual void    refresh() const = 0;
-  virtual int     get_v() const = 0;
+  virtual void		init_lib(Map*) = 0;
+  virtual void		draw_map(Map*) = 0;
+  virtual void		draw_snake(Snake*) = 0;
+  virtual void    draw_food(Food*) = 0;
+  virtual void		add_cube(rgb) = 0;
+  virtual int     handle_mvt(Snake*) = 0;
+  virtual void    refresh() = 0;
+  virtual int     get_v() = 0;
 };
 
 #endif

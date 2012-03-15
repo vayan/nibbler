@@ -26,15 +26,15 @@ class Draw : public ILib
 public:
 		      Draw();
 		      ~Draw();
-  void		init_lib(Map*) const;
-  void		draw_map(Map*) const;
-  void		draw_snake(Snake*) const;
-  void    draw_food(Food*) const;
-  void		add_cube(rgb) const;
-  int     handle_mvt(Snake*) const;
-  void    refresh() const;
-  int     get_v() const;
-  void    end() const;
+  void		init_lib(Map*) ;
+  void		draw_map(Map*) ;
+  void		draw_snake(Snake*) ;
+  void    draw_food(Food*);
+  void		add_cube(rgb) ;
+  int     handle_mvt(Snake*);
+  void    refresh();
+  int     get_v();
+  void    end();
 private:
   int      v;
   Map		   *map;
