@@ -5,16 +5,16 @@
 // Login   <tanter_l@epitech.net>
 // 
 // Started on  Wed Mar 14 11:48:26 2012 ludovic tanter
-// Last update Wed Mar 14 17:36:30 2012 ludovic tanter
+// Last update Thu Mar 15 16:20:52 2012 ludovic tanter
 //
 
 #include	<curses.h>
 #include	<ncurses.h>
 #include	<list>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+#include	<unistd.h>
+#include	<sys/types.h>
+#include	<sys/stat.h>
+#include	<fcntl.h>
 
 #include	"draw.hh"
 #include	"map.hh"
@@ -26,7 +26,10 @@ Draw::Draw()
 
 Draw::~Draw()
 {
-
+  curs_set(1);  
+  clear();
+  refresh();
+  endwin();
 }
 
 int		Draw::handle_mvt(Snake *snake)
@@ -83,13 +86,22 @@ void		Draw::draw_snake(Snake *snake)
 {
   std::list<int*> pos = snake->get_pos();
 
-  attron(COLOR_PAIR(6));
   for (std::list<int*>::iterator it = pos.begin(); it != pos.end(); ++it)
     {
       move((*it)[0], (*it)[1]);
-      printw(" ");
-    }    
-  attroff(COLOR_PAIR(6));
+      if (it == pos.begin())
+	{
+	  attron(COLOR_PAIR(4));
+	  printw(" ");
+	  attroff(COLOR_PAIR(4));
+	}
+      else
+	{
+	  attron(COLOR_PAIR(6));
+	  printw(" ");
+	  attroff(COLOR_PAIR(6));
+	}
+    }
 }
 
 void		Draw::draw_food(Food *food)
@@ -112,12 +124,12 @@ void		Draw::init_lib(Map *map)
   init_pair(5, COLOR_YELLOW, COLOR_YELLOW);
   init_pair(6, COLOR_GREEN, COLOR_GREEN);
   curs_set(0);
-  noecho();
   nodelay(stdscr, TRUE);
   keypad(stdscr, TRUE);
+  noecho();
 }
 
-int   Draw::get_v()
+int		Draw::get_v()
 {
   return (this->v);
 }
