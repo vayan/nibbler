@@ -5,7 +5,7 @@
 // Login   <maitre_r@epitech.net>
 // 
 // Started on  Tue Mar 13 11:05:11 2012 robin maitre
-// Last update Fri Mar 16 14:04:01 2012 robin maitre
+// Last update Fri Mar 16 14:29:24 2012 robin maitre
 //
 
 #include <iostream>
@@ -119,7 +119,7 @@ int     Draw::handle_mvt(Snake* snake)
       switch(event.key.keysym.sym)
         {
         case SDLK_SPACE:
-          snake->set_speed(snake->get_speed() + 30);
+          snake->set_speed(snake->get_speed() + 20);
           break;
         case SDLK_LEFT:
 	  snake->set_dir(Right);
@@ -142,7 +142,7 @@ int     Draw::handle_mvt(Snake* snake)
     }
   if (event.type == SDL_KEYUP)
     if (event.key.keysym.sym == SDLK_SPACE)
-      snake->set_speed(snake->get_speed() - 30);
+      snake->set_speed(snake->get_speed() - 20);
   return (ret);
 }
 
