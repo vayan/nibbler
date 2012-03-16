@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:17:02 2012 yann vaillant
-// Last update Fri Mar 16 11:30:54 2012 robin maitre
+// Last update Fri Mar 16 14:52:02 2012 ludovic tanter
 //
 
 #include <sstream>
@@ -172,7 +172,7 @@ int Core::launch_game() const
       this->draw->draw_snake(this->snake);
       this->draw->draw_food(this->food);
       this->draw->refresh();
-      speed = 400000 - (10000 * this->snake->get_speed());
+      speed = 300000 - (10000 * this->snake->get_speed());
       if (speed <= 0)
 	speed = 10000;
       usleep(speed);

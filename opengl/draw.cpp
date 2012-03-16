@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 //
 // Started on  Mon Mar 12 12:38:43 2012 yann vaillant
-// Last update Fri Mar 16 13:59:18 2012 robin maitre
+// Last update Fri Mar 16 14:37:03 2012 ludovic tanter
 //
 
 #include <iostream>
@@ -22,7 +22,7 @@
 #include "map.hh"
 #include "snake.hh"
 
- __attribute__((constructor)) Draw::Draw()
+Draw::Draw()
 {
 }
 

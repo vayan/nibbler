@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 17:47:32 2012 yann vaillant
-// Last update Wed Mar 14 17:05:15 2012 yann vaillant
+// Last update Fri Mar 16 14:50:22 2012 ludovic tanter
 //
 
 #include "snake.hh"
@@ -101,7 +101,7 @@ void  Snake::set_speed(int val)
 {
   int max = 70;
 
-  if (this->speed + val >= max)
+  if (val >= max)
     this->speed = max;
   else
     this->speed = val;
