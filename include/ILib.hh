@@ -32,7 +32,6 @@ public:
   virtual int     handle_mvt(Snake*) = 0;
   virtual void    refresh() = 0;
   virtual int     get_v() = 0;
-  virtual ~ILib() = 0;
 };
 
 #endif

@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 //
 // Started on  Mon Mar 12 12:38:43 2012 yann vaillant
-// Last update Wed Mar 14 17:05:37 2012 yann vaillant
+// Last update Fri Mar 16 09:51:15 2012 yann vaillant
 //
 
 #include <iostream>
@@ -22,14 +22,12 @@
 #include "map.hh"
 #include "snake.hh"
 
-Draw::Draw()
+ __attribute__((constructor)) Draw::Draw()
 {
-
 }
 
-Draw::~Draw()
+ Draw::~Draw()
 {
-
 }
 
 int   Draw::get_v()
@@ -241,3 +239,7 @@ extern "C" ILib* create_draw()
     return (new Draw());
   }
 
+__attribute__((destructor))  void  end()
+{
+ 
+}

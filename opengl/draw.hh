@@ -34,7 +34,6 @@ public:
   int     handle_mvt(Snake*);
   void    refresh();
   int     get_v();
-  void    end();
 private:
   int      v;
   Map		   *map;

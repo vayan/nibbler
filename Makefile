@@ -5,7 +5,7 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Thu Mar 15 15:36:32 2012 ludovic tanter
+## Last update Fri Mar 16 09:50:06 2012 yann vaillant
 ##
 
 
@@ -53,13 +53,13 @@ $(NAME_LIB_NCURSES): $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
 	$(CC) -shared -o $(NAME_LIB_NCURSES) $(OBJ_LIB_NCURSES) $(OBJ_LIB_COMMON)
 
 clean:
-	#rm -f *~
-	#rm -f *#
-	#rm -f src/*~
-	#rm -f src/*# 
-	#rm -f $(OBJ_LIB_OPGL)
-	#rm -f $(OBJ_LIB_COMMON)
-	#rm -f OBJ
+	rm -f *~
+	rm -f *#
+	rm -f src/*~
+	rm -f src/*# 
+	rm -f src/*.o
+	rm -f ncurses/*.o
+	rm -f opengl/*.o
 
 fclean: clean
 	rm -rf $(NAME)

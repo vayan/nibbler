@@ -45,7 +45,8 @@ int	main(int ac, char **av)
   	Core	core(map, graph, new_snake);
   	//map.aff_map(); //test
   	core.launch_game();
-	dlclose(dlhandle);
+	while (dlclose(dlhandle) != 0) { }
+	std::cout << "sdsds" << std::endl;
   	return (0);
 }
 
