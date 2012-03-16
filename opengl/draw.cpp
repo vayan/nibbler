@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 //
 // Started on  Mon Mar 12 12:38:43 2012 yann vaillant
-// Last update Fri Mar 16 09:51:15 2012 yann vaillant
+// Last update Fri Mar 16 13:59:18 2012 robin maitre
 //
 
 #include <iostream>
@@ -232,6 +232,10 @@ int	Draw::handle_mvt(Snake* snake)
     if (event.key.keysym.sym == SDLK_SPACE)
       snake->set_speed(snake->get_speed() - 30);
   return (ret);
+}
+
+void    Draw::end_surface()
+{
 }
 
 extern "C" ILib* create_draw()

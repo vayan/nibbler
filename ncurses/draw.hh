@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 //
 // Started on  Mon Mar 12 12:33:30 2012 yann vaillant
-// Last update Tue Mar 13 14:08:05 2012 yann vaillant
+// Last update Fri Mar 16 14:00:50 2012 robin maitre
 //
 
 #ifndef _DRAW_
@@ -34,6 +34,7 @@ public:
   int     handle_mvt(Snake*);
   void    refresh();
   int     get_v() ;
+  void    end_surface();
 private:
   int      v;
   Map		   *map;

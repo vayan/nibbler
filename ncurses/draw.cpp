@@ -5,7 +5,7 @@
 // Login   <tanter_l@epitech.net>
 // 
 // Started on  Wed Mar 14 11:48:26 2012 ludovic tanter
-// Last update Thu Mar 15 17:40:28 2012 ludovic tanter
+// Last update Fri Mar 16 13:59:36 2012 robin maitre
 //
 
 #include	<curses.h>
@@ -143,6 +143,10 @@ void		Draw::refresh()
 }
 
 void		Draw::add_cube(rgb color)
+{
+}
+
+void    Draw::end_surface()
 {
 }
 
