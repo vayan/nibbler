@@ -46,7 +46,6 @@ int	main(int ac, char **av)
   	//map.aff_map(); //test
   	core.launch_game();
 	while (dlclose(dlhandle) != 0) { }
-	std::cout << "sdsds" << std::endl;
   	return (0);
 }
 
