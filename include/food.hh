@@ -5,18 +5,18 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Tue Mar 13 14:30:02 2012 yann vaillant
-// Last update Tue Mar 13 15:10:34 2012 yann vaillant
+// Last update Sat Mar 17 18:47:32 2012 ludovic tanter
 //
 
 #ifndef _FOOD_H
 #define _FOOD_H
 
-class Food 
+class	Food 
 {
 public:
-  		Food();
-  		Food(int, int);
-  		~Food() {}
+  Food();
+  Food(int, int);
+  ~Food() {};
   int	get_x();
   int	get_y();
   void	set_x(int val);

@@ -5,7 +5,7 @@
 // Login   <maitre_r@epitech.net>
 // 
 // Started on  Tue Mar 13 11:05:11 2012 robin maitre
-// Last update Sat Mar 17 02:16:19 2012 robin maitre
+// Last update Sat Mar 17 18:55:11 2012 ludovic tanter
 //
 
 #include <iostream>
@@ -15,18 +15,17 @@
 #include <SDL/SDL_image.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "draw.hh"
 #include "map.hh"
 #include "snake.hh"
 
 Draw::Draw()
 {
-
 }
 
 Draw::~Draw()
 {
-
 }
 
 int   Draw::get_v()
@@ -67,7 +66,7 @@ void  Draw::draw_snake(Snake *snake)
     }
 }
 
-void  Draw::draw_food(Food *food)
+void		Draw::draw_food(Food *food)
 {
   SDL_Rect	posfood;
 
@@ -85,7 +84,7 @@ void	Draw::draw_map(Map *map)
 {
   int	i;
   int	j;
-  SDL_Rect	posobj;
+  SDL_Rect posobj;
 
   i = 0;
   j = 0;

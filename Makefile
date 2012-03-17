@@ -5,7 +5,7 @@
 ## Login   <vailla_y@epitech.net>
 ## 
 ## Started on  Thu Feb 23 22:09:58 2012 yann vaillant
-## Last update Fri Mar 16 11:07:27 2012 robin maitre
+## Last update Sat Mar 17 18:57:57 2012 ludovic tanter
 ##
 
 
@@ -71,6 +71,7 @@ clean:
 	rm -f src/*.o
 	rm -f ncurses/*.o
 	rm -f opengl/*.o
+	rm -f SDL/*.o
 
 fclean: clean
 	rm -rf $(NAME)
