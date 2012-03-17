@@ -5,7 +5,7 @@
 // Login   <maitre_r@epitech.net>
 // 
 // Started on  Tue Mar 13 11:05:11 2012 robin maitre
-// Last update Fri Mar 16 14:29:24 2012 robin maitre
+// Last update Sat Mar 17 02:16:19 2012 robin maitre
 //
 
 #include <iostream>
@@ -150,7 +150,7 @@ void	Draw::end_surface()
 {
   SDL_FreeSurface(this->block);
   SDL_FreeSurface(this->grass);
-  SDL_FreeSurface(this->lapin);
+  SDL_FreeSurface(this->food);
   SDL_FreeSurface(this->snake_h);
   SDL_FreeSurface(this->snake_b);
 }
@@ -162,5 +162,5 @@ extern "C" ILib* create_draw()
 
 __attribute__((destructor))  void  end()
 {
-
+ 
 }
