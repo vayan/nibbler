@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 11:33:07 2012 yann vaillant
-// Last update Sat Mar 17 18:48:37 2012 ludovic tanter
+// Last update Sun Mar 18 23:08:39 2012 robin maitre
 //
 
 #ifndef MAP_HH
@@ -20,7 +20,7 @@ public :
   Map(int x, int y);
   ~Map();
   void	init_map();
-  void	aff_map();
+  void	aff_map() const;
   std::vector< std::vector<char> > get_map();
   int	get_x();
   int	get_y();

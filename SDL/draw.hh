@@ -5,7 +5,7 @@
 // Login   <maitre_r@epitech.net>
 // 
 // Started on  Thu Mar 15 16:46:44 2012 robin maitre
-// Last update Sat Mar 17 18:56:16 2012 ludovic tanter
+// Last update Sun Mar 18 23:14:56 2012 robin maitre
 //
 
 #ifndef _DRAW_
@@ -25,11 +25,11 @@ class	Draw : public ILib
 public:
   Draw();
   ~Draw();
-  void	init_lib(Map*) ;
-  void	draw_map(Map*) ;
-  void	draw_snake(Snake*) ;
+  void	init_lib(Map*);
+  void	draw_map(Map*);
+  void	draw_snake(Snake*);
   void	draw_food(Food*);
-  void	add_cube(rgb) ;
+  void	add_cube(rgb);
   int	handle_mvt(Snake*);
   void	refresh();
   int	get_v();

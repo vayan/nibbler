@@ -5,7 +5,7 @@
 // Login   <vailla_y@epitech.net>
 // 
 // Started on  Mon Mar 12 11:40:49 2012 yann vaillant
-// Last update Sat Mar 17 18:44:04 2012 ludovic tanter
+// Last update Sun Mar 18 23:08:36 2012 robin maitre
 //
 
 
@@ -57,7 +57,7 @@ void	Map::init_map()
     }
 }
 
-void	Map::aff_map()
+void	Map::aff_map() const
 {
   int	i = 0;
   int	j;
